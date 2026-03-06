@@ -20,7 +20,7 @@ body {
     background: #fff;
     padding: 1rem 5%;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
@@ -591,4 +591,5 @@ body.dark-mode .unit-tag {
     text-align: center;
     line-height: 15px;
     transition: width 1s ease-in-out;
+
 }
