@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الدرس الأول | الحقيبة التعليمية</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-container { max-width: 700px; margin: 30px auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .q-section { margin-bottom: 25px; padding: 15px; border-right: 5px solid #1a73e8; background: #fcfcfc; }
+        .q-text { font-weight: bold; margin-bottom: 10px; display: block; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .opt-card { background: #fff; border: 1px solid #ddd; padding: 10px; border-radius: 8px; cursor: pointer; text-align: center; transition: 0.3s; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + label { background: #1a73e8; color: white; border-color: #1a73e8; }
+        .btn-submit { width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-top: 20px; }
+        #result-box { display: none; text-align: center; padding: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container" id="quiz-ui">
+            <div id="timer-box" style="text-align: center; font-size: 1.5rem; font-weight: bold; color: #e74c3c; margin-bottom: 15px;">
+    ⏱️ الوقت المتبقي: <span id="time-left">05:00</span>
+</div>
+            <h2 style="text-align: center;">🧠 اختبار: الجهاز التنفسي</h2>
+            <form id="qForm">
+                
+                <h4 style="color: #1a73e8;">أولاً: اختر الإجابة الصحيحة</h4>
+                
+                <div class="q-section">
+                    <span class="q-text">1. العضو الذي يبدأ منه الجهاز التنفسي هو:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q1" id="q1a" value="1"><label class="opt-card" for="q1a">الأنف</label>
+                        <input type="radio" name="q1" id="q1b" value="0"><label class="opt-card" for="q1b">القلب</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">2. يتم تبادل الغازات داخل:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q2" id="q2a" value="1"><label class="opt-card" for="q2a">الحويصلات الهوائية</label>
+                        <input type="radio" name="q2" id="q2b" value="0"><label class="opt-card" for="q2b">المعدة</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">3. الغاز الذي نحتاجه في عملية التنفس هو:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q3" id="q3a" value="1"><label class="opt-card" for="q3a">الأكسجين</label>
+                        <input type="radio" name="q3" id="q3b" value="0"><label class="opt-card" for="q3b">ثاني أكسيد الكربون</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">4. الأنبوب الذي يمر منه الهواء للرئتين يسمى:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q4" id="q4a" value="1"><label class="opt-card" for="q4a">القصبة الهوائية</label>
+                        <input type="radio" name="q4" id="q4b" value="0"><label class="opt-card" for="q4b">المرئ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">5. عضلة كبيرة تقع أسفل الرئتين تساعد في التنفس:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q5" id="q5a" value="1"><label class="opt-card" for="q5a">الحجاب الحاجز</label>
+                        <input type="radio" name="q5" id="q5b" value="0"><label class="opt-card" for="q5b">عضلة الساق</label>
+                    </div>
+                </div>
+
+                <h4 style="color: #e67e22; margin-top: 30px;">ثانياً: ضع علامة صح أو خطأ</h4>
+
+                <div class="q-section">
+                    <span class="q-text">6. الشهيق هو عملية دخول الهواء المحمل بالأكسجين.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q6" id="q6t" value="1"><label class="opt-card" for="q6t">✅ صح</label>
+                        <input type="radio" name="q6" id="q6f" value="0"><label class="opt-card" for="q6f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">7. ثاني أكسيد الكربون مفيد جداً للجسم أثناء التنفس.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q7" id="q7t" value="0"><label class="opt-card" for="q7t">✅ صح</label>
+                        <input type="radio" name="q7" id="q7f" value="1"><label class="opt-card" for="q7f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">8. الرئة اليمنى أصغر قليلاً من الرئة اليسرى.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q8" id="q8t" value="0"><label class="opt-card" for="q8t">✅ صح</label>
+                        <input type="radio" name="q8" id="q8f" value="1"><label class="opt-card" for="q8f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">9. الأنف يحتوي على شعيرات لتنقية الهواء.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q9" id="q9t" value="1"><label class="opt-card" for="q9t">✅ صح</label>
+                        <input type="radio" name="q9" id="q9f" value="0"><label class="opt-card" for="q9f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">10. الحنجرة تسمى "صندوق الصوت".</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q10" id="q10t" value="1"><label class="opt-card" for="q10t">✅ صح</label>
+                        <input type="radio" name="q10" id="q10f" value="0"><label class="opt-card" for="q10f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <button type="button" onclick="calculateResult(1)" class="btn-submit">عرض النتيجة وفتح الدرس التالي</button>
+            </form>
+        </div>
+
+        <div id="result-box" class="quiz-container">
+            <h1 id="score-text"></h1>
+            <p id="feedback"></p>
+            <a href="quizzes.html" class="btn-submit" style="text-decoration: none; display: block;">العودة لصفحة الاختبارات</a>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 300; // 300 ثانية يعني 5 دقائق
+const timerDisplay = document.getElementById('time-left');
+
+// دالة لتحديث الوقت كل ثانية
+const timer = setInterval(() => {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    // إضافة صفر لو الثواني أقل من 10 (عشان يبقى شكلها 05:09)
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    timerDisplay.innerHTML = `${minutes}:${seconds}`;
+
+    if (timeLeft <= 0) {
+        clearInterval(timer);
+        alert("⚠️ انتهى الوقت! سيتم تصحيح إجاباتك الآن.");
+        calculateResult(1); // استدعاء دالة النتيجة أوتوماتيك (غير الرقم حسب الدرس)
+    }
+    timeLeft--;
+}, 1000);
+
+// تعديل بسيط على دالة النتيجة عشان توقف العداد لما الطالب يخلص بدري
+function calculateResult(lessonID) {
+    clearInterval(timer); // وقف العداد أول ما يدوس إرسال
+    
+    let score = 0;
+    const data = new FormData(document.getElementById('qForm'));
+    for (let v of data.values()) { score += parseInt(v); }
+
+    document.getElementById('quiz-ui').style.display = 'none';
+    document.getElementById('result-box').style.display = 'block';
+    document.getElementById('score-text').innerText = `درجتك: ${score} من 10`;
+
+    if(score >= 7) {
+        document.getElementById('feedback').innerText = "رائع! نجحت قبل انتهاء الوقت.";
+        let lastDone = localStorage.getItem('quizCompleted') || 0;
+        if(lessonID > lastDone) localStorage.setItem('quizCompleted', lessonID);
+    } else {
+        document.getElementById('feedback').innerText = "للأسف لم تنجح، حاول مرة أخرى.";
+    }
+}
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

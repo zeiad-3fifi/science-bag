@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الدم ومكوناته</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-container { max-width: 700px; margin: 30px auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .q-section { margin-bottom: 20px; padding: 15px; border-right: 5px solid #e91e63; background: #fff5f8; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .opt-card { background: #fff; border: 1px solid #ddd; padding: 10px; border-radius: 8px; cursor: pointer; text-align: center; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + label { background: #e91e63; color: white; border-color: #e91e63; }
+        .btn-submit { width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="quiz-container" id="quiz-ui">
+        <h2 style="text-align: center; color: #e91e63;">🩸 اختبار: الدم ومكوناته</h2>
+        <form id="qForm">
+            <div class="q-section"><b>1. المادة التي تعطي الدم لونه الأحمر هي:</b>
+                <div class="options-grid">
+                    <input type="radio" name="q1" id="q1a" value="1"><label class="opt-card" for="q1a">الهيموجلوبين</label>
+                    <input type="radio" name="q1" id="q1b" value="0"><label class="opt-card" for="q1b">البلازما</label>
+                </div>
+            </div>
+            <div class="q-section"><b>2. عند حدوث جرح، ما الذي يساعد على تجلط الدم؟</b>
+                <div class="options-grid">
+                    <input type="radio" name="q2" id="q2a" value="1"><label class="opt-card" for="q2a">الصفائح الدموية</label>
+                    <input type="radio" name="q2" id="q2b" value="0"><label class="opt-card" for="q2b">خلايا الدم البيضاء</label>
+                </div>
+            </div>
+            <div class="q-section"><b>3. سائل يميل لونه للصفرة ويشكل أكثر من نصف حجم الدم:</b>
+                <div class="options-grid">
+                    <input type="radio" name="q3" id="q3a" value="1"><label class="opt-card" for="q3a">البلازما</label>
+                    <input type="radio" name="q3" id="q3b" value="0"><label class="opt-card" for="q3b">الأكسجين</label>
+                </div>
+            </div>
+            <div class="q-section"><b>4. وظيفة خلايا الدم البيضاء هي:</b>
+                <div class="options-grid">
+                    <input type="radio" name="q4" id="q4a" value="1"><label class="opt-card" for="q4a">الدفاع عن الجسم</label>
+                    <input type="radio" name="q4" id="q4b" value="0"><label class="opt-card" for="q4b">نقل الغذاء</label>
+                </div>
+            </div>
+            <div class="q-section"><b>5. خلايا ليس لها نواة وتعيش لفترة قصيرة:</b>
+                <div class="options-grid">
+                    <input type="radio" name="q5" id="q5a" value="1"><label class="opt-card" for="q5a">خلايا الدم الحمراء</label>
+                    <input type="radio" name="q5" id="q5b" value="0"><label class="opt-card" for="q5b">خلايا الجلد</label>
+                </div>
+            </div>
+            <div class="q-section"><b>6. البلازما تنقل الفضلات إلى أعضاء الإخراج.</b>
+                <div class="options-grid">
+                    <input type="radio" name="q6" id="q6t" value="1"><label class="opt-card" for="q6t">✅ صح</label>
+                    <input type="radio" name="q6" id="q6f" value="0"><label class="opt-card" for="q6f">❌ خطأ</label>
+                </div>
+            </div>
+            <div class="q-section"><b>7. خلايا الدم الحمراء تحارب الفيروسات.</b>
+                <div class="options-grid">
+                    <input type="radio" name="q7" id="q7t" value="0"><label class="opt-card" for="q7t">✅ صح</label>
+                    <input type="radio" name="q7" id="q7f" value="1"><label class="opt-card" for="q7f">❌ خطأ</label>
+                </div>
+            </div>
+            <div class="q-section"><b>8. الدم ينقل الغازات والهرمونات لجميع أجزاء الجسم.</b>
+                <div class="options-grid">
+                    <input type="radio" name="q8" id="q8t" value="1"><label class="opt-card" for="q8t">✅ صح</label>
+                    <input type="radio" name="q8" id="q8f" value="0"><label class="opt-card" for="q8f">❌ خطأ</label>
+                </div>
+            </div>
+            <div class="q-section"><b>9. يتكون الدم من 3 مكونات فقط.</b>
+                <div class="options-grid">
+                    <input type="radio" name="q9" id="q9t" value="0"><label class="opt-card" for="q9t">✅ صح</label>
+                    <input type="radio" name="q9" id="q9f" value="1"><label class="opt-card" for="q9f">❌ خطأ</label>
+                </div>
+            </div>
+            <div class="q-section"><b>10. نقص كرات الدم الحمراء يسبب الأنيميا.</b>
+                <div class="options-grid">
+                    <input type="radio" name="q10" id="q10t" value="1"><label class="opt-card" for="q10t">✅ صح</label>
+                    <input type="radio" name="q10" id="q10f" value="0"><label class="opt-card" for="q10f">❌ خطأ</label>
+                </div>
+            </div>
+            <button type="button" onclick="calculateResult(3)" class="btn-submit">عرض النتيجة وفتح الدرس التالي</button>
+        </form>
+    </div>
+    <script>
+        function calculateResult(lessonID) {
+            let score = 0;
+            const data = new FormData(document.getElementById('qForm'));
+            for (let v of data.values()) { score += parseInt(v); }
+            alert("درجتك: " + score + " من 10");
+            if(score >= 7) {
+                localStorage.setItem('quizCompleted', lessonID);
+                window.location.href = "quizzes.html";
+            } else { alert("حاول مرة أخرى للنجاح!"); }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الجهاز الدوري | الحقيبة التعليمية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .quiz-container { max-width: 700px; margin: 30px auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .q-section { margin-bottom: 20px; padding: 15px; border-right: 5px solid #e74c3c; background: #fff5f5; }
+        .q-text { font-weight: bold; margin-bottom: 10px; display: block; color: #c0392b; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .opt-card { background: #fff; border: 1px solid #ddd; padding: 10px; border-radius: 8px; cursor: pointer; text-align: center; transition: 0.3s; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + label { background: #e74c3c; color: white; border-color: #c0392b; }
+        .btn-submit { width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; margin-top: 20px; font-family: 'Tajawal'; }
+        #result-box { display: none; text-align: center; padding: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container" id="quiz-ui">
+            <h2 style="text-align: center; color: #e74c3c;">❤️ اختبار: الجهاز الدوري</h2>
+            <form id="qForm">
+                
+                <h4 style="color: #c0392b;">أولاً: اختر الإجابة الصحيحة</h4>
+                
+                <div class="q-section">
+                    <span class="q-text">1. العضو الأساسي في الجهاز الدوري الذي يضخ الدم هو:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q1" id="q1a" value="1"><label class="opt-card" for="q1a">القلب</label>
+                        <input type="radio" name="q1" id="q1b" value="0"><label class="opt-card" for="q1b">الكبد</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">2. الأوعية التي تنقل الدم من القلب لجميع أجزاء الجسم:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q2" id="q2a" value="1"><label class="opt-card" for="q2a">الشرايين</label>
+                        <input type="radio" name="q2" id="q2b" value="0"><label class="opt-card" for="q2b">الأوردة</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">3. يتكون قلب الإنسان من كم حجرة؟</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q3" id="q3a" value="1"><label class="opt-card" for="q3a">أربع حجرات</label>
+                        <input type="radio" name="q3" id="q3b" value="0"><label class="opt-card" for="q3b">حجرتين فقط</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">4. الجزء السائل من الدم يسمى:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q4" id="q4a" value="1"><label class="opt-card" for="q4a">البلازما</label>
+                        <input type="radio" name="q4" id="q4b" value="0"><label class="opt-card" for="q4b">الصفائح</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">5. خلايا الدم المسؤولة عن محاربة الميكروبات هي:</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q5" id="q5a" value="1"><label class="opt-card" for="q5a">خلايا الدم البيضاء</label>
+                        <input type="radio" name="q5" id="q5b" value="0"><label class="opt-card" for="q5b">خلايا الدم الحمراء</label>
+                    </div>
+                </div>
+
+                <h4 style="color: #e67e22; margin-top: 20px;">ثانياً: ضع علامة صح أو خطأ</h4>
+
+                <div class="q-section">
+                    <span class="q-text">6. وظيفة خلايا الدم الحمراء هي نقل الأكسجين.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q6" id="q6t" value="1"><label class="opt-card" for="q6t">✅ صح</label>
+                        <input type="radio" name="q6" id="q6f" value="0"><label class="opt-card" for="q6f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">7. الأوردة تعيد الدم من الجسم إلى القلب.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q7" id="q7t" value="1"><label class="opt-card" for="q7t">✅ صح</label>
+                        <input type="radio" name="q7" id="q7f" value="0"><label class="opt-card" for="q7f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">8. الصفائح الدموية تساعد في تجلط الدم عند الجروح.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q8" id="q8t" value="1"><label class="opt-card" for="q8t">✅ صح</label>
+                        <input type="radio" name="q8" id="q8f" value="0"><label class="opt-card" for="q8f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">9. ينبض القلب فقط عندما نكون نائمين.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q9" id="q9t" value="0"><label class="opt-card" for="q9t">✅ صح</label>
+                        <input type="radio" name="q9" id="q9f" value="1"><label class="opt-card" for="q9f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <div class="q-section">
+                    <span class="q-text">10. الدورة الدموية هي مسار الدم داخل الجسم.</span>
+                    <div class="options-grid">
+                        <input type="radio" name="q10" id="q10t" value="1"><label class="opt-card" for="q10t">✅ صح</label>
+                        <input type="radio" name="q10" id="q10f" value="0"><label class="opt-card" for="q10f">❌ خطأ</label>
+                    </div>
+                </div>
+
+                <button type="button" onclick="calculateResult(2)" class="btn-submit">عرض النتيجة وفتح الدرس الثالث</button>
+            </form>
+        </div>
+
+        <div id="result-box" class="quiz-container">
+            <h1 id="score-text"></h1>
+            <p id="feedback"></p>
+            <a href="quizzes.html" class="btn-submit" style="text-decoration: none; display: block; text-align: center;">العودة لصفحة الاختبارات</a>
+        </div>
+    </div>
+
+    <script>
+        function calculateResult(lessonID) {
+            let score = 0;
+            const data = new FormData(document.getElementById('qForm'));
+            for (let v of data.values()) { score += parseInt(v); }
+
+            document.getElementById('quiz-ui').style.display = 'none';
+            document.getElementById('result-box').style.display = 'block';
+            document.getElementById('score-text').innerText = `درجتك: ${score} من 10`;
+
+            if(score >= 7) {
+                document.getElementById('feedback').innerText = "أحسنت! لقد نجحت في اختبار الجهاز الدوري.";
+                let lastDone = localStorage.getItem('quizCompleted') || 0;
+                if(lessonID > lastDone) localStorage.setItem('quizCompleted', lessonID);
+            } else {
+                document.getElementById('feedback').innerText = "للأسف لم تنجح، حاول مرة أخرى لفتح الدرس التالي.";
+                document.getElementById('feedback').style.color = "red";
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
