@@ -6,6 +6,7 @@
     <title>مركز الاختبارات | الحقيبة التعليمية</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* تنسيق شريط التقدم */
         .progress-section {
@@ -79,10 +80,11 @@
             <li><a href="lessons.html">الدروس</a></li>
             <li><a href="downloads.html">التحميلات</a></li>
             <li><a href="quizzes.html" class="active">الاختبارات</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
     </nav>
 
-    <main class="container">
+    <main class="container" data-aos="fade-up">
         <div class="progress-section">
             <h3>📊 مستوى إنجازك في المنهج</h3>
             <div class="progress-container">
@@ -182,5 +184,12 @@
     window.onload = checkProgress;
 </script>
 <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+ </script>
 </body>
 </html>

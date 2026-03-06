@@ -6,6 +6,7 @@
     <title>فهرس الدروس | الحقيبة التعليمية</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -19,14 +20,14 @@
         </ul>
     </nav>
 
-    <header class="page-header">
+    <header class="page-header" data-aos="fade-down" style="background: linear-gradient(135deg, var(--main-blue), var(--accent-color));">
         <div class="container">
             <h1>📚 الوحدات الدراسية</h1>
             <p>اختر الوحدة ثم ابدأ الدرس</p>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" data-aos="fade-up">
         <div class="unit-section">
             <button class="unit-header" onclick="toggleUnit('unit1')">
                 <span>📂 الوحدة الأولى: أجهزة النقل والإمداد</span>
@@ -100,5 +101,12 @@
         }
     </script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // مدة الحركة ثانية واحدة
+    once: true      // الحركة تحصل مرة واحدة بس وأنت نازل
+  });
+</script>
 </body>
 </html>

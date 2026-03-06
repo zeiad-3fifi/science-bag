@@ -561,3 +561,34 @@ body.dark-mode .unit-tag {
         padding: 8px;
     }
 }
+/* Dashboard Styling */
+.student-dashboard { margin-top: -30px; position: relative; z-index: 10; }
+.dashboard-card {
+    background: rgb(44, 130, 191);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.progress-wrapper {
+    background: #ffffff;
+    width: 200px;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.progress-bar-fill {
+    background: linear-gradient(90deg, #0062ff, #00d1b2);
+    height: 100%;
+    width: 0%; /* هيتحدث بالجافا سكريبت */
+    color: white;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 15px;
+    transition: width 1s ease-in-out;
+}
