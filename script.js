@@ -12,7 +12,6 @@ window.addEventListener('load', () => {
     const nameDisplay = document.getElementById('userNameDisplay');
 
     if (!savedName) {
-        // لو مفيش اسم، نطلبه منه بشكل لطيف
         setTimeout(() => {
             let name = prompt("مرحباً بك في الحقيبة التعليمية! ما هو اسمك يا بطل؟");
             if (name) {
