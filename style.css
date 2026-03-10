@@ -8,6 +8,25 @@
     --white: #ffffff;
 }
 
+.pdf-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #e74c3c; /* لون أحمر هاديء يناسب الـ PDF */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    transition: 0.3s;
+}
+
+.pdf-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    color: white;
+}
+
 body {
     font-family: 'Tajawal', sans-serif;
     background-color: var(--light-bg);
@@ -593,3 +612,4 @@ body.dark-mode .unit-tag {
     transition: width 1s ease-in-out;
 
 }
+
