@@ -1,32 +1,50 @@
-// وظيفة تبديل الثيم
-function toggleTheme() {
-    const body = document.body;
-    const checkbox = document.getElementById('darkModeToggle');
-    
-    if (checkbox.checked) {
-        body.setAttribute('data-theme', 'dark');
-        body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        body.removeAttribute('data-theme');
-        body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
+const toggleBtn = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// 1. التأكد من حالة الوضع الليلي المحفوظة عند تحميل الصفحة
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    // إذا كان الزرار عبارة عن Checkbox (الزرار الجديد)
+    if (toggleBtn && toggleBtn.type === 'checkbox') {
+        toggleBtn.checked = true;
     }
 }
+/*window.addEventListener('load', () => {
+    // كود الترحيب بالاسم
+    let savedName = localStorage.getItem('studentName');
+    const nameDisplay = document.getElementById('userNameDisplay');
 
-// تنفيذ الثيم المحفوظ أول ما الصفحة تفتح
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    const checkbox = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    if (savedTheme === 'dark') {
-        body.setAttribute('data-theme', 'dark');
-        body.classList.add('dark-mode');
-        if (checkbox) checkbox.checked = true;
+    if (!savedName) {
+        setTimeout(() => {
+            let name = prompt("مرحباً بك في الحقيبة التعليمية! ما هو اسمك يا بطل؟");
+            if (name) {
+                localStorage.setItem('studentName', name);
+                if(nameDisplay) nameDisplay.innerText = name;
+            }
+        }, 1000);
     } else {
-        body.removeAttribute('data-theme');
-        body.classList.remove('dark-mode');
-        if (checkbox) checkbox.checked = false;
+        if(nameDisplay) nameDisplay.innerText = savedName;
+    }
+});*/
+// 2. وظيفة الزرار عند الضغط
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+window.addEventListener('load', () => {
+    // تحديث نسبة التقدم في لوحة التحكم
+    const completed = parseInt(localStorage.getItem('quizCompleted') || 0);
+    const progressPercent = Math.round((completed / 6) * 100);
+    
+    const progressFill = document.getElementById('overallProgress');
+    if(progressFill) {
+        progressFill.style.width = progressPercent + '%';
+        progressFill.innerText = progressPercent + '%';
+    }
+
+    // ممكن مستقبلاً نضيف كود يطلب اسم الطالب لو مش موجود
+    const nameDisplay = document.getElementById('userNameDisplay');
+    const savedName = localStorage.getItem('studentName');
+    if(savedName && nameDisplay) {
+        nameDisplay.innerText = savedName;
     }
 });
